@@ -76,3 +76,25 @@ por análisis de la propia ecuación, en ausencia de expresiones formales de dic
 	$$u'' + \left( 1 + \frac{1 - 4p^2}{4x^2} \right) u = 0.$$
 	Comparando con $u'' + u = 0$ y aplicando el teorema de comparación de Sturm, se obtienen los resultados según el valor de $p$.
 \end{demo}
+
+\section{Ejercicios}A continuación
+\begin{problem}\textbf{Probar que los ceros de las funciones $a\sen(x) + b\cos(x)$ y $c\sen(x)+d\cos(x)$ son distintos y alternados siempre que $ad-bc \neq 0$}.
+\end{problem}
+	Consideramos entonces el siguiente sistema: $$
+	\begin{cases}
+		a \sin x + b \cos x = y_1(x) & (1) \\
+		c \sin x + d \cos x = y_2(x) & (2)
+	\end{cases}$$
+	Sabemos que $y_1 , y_2$ son soluciones de $y'' + y=0$. Entonces, sabemos que si las soluciones son linealmente independientes se cumple el \textit{Teorema de Separación}, por tanto demostramos la hipótesis del enunciado. Entonces, debemos verificar las condiciones para que estas sean LI. Si nos fijamos en el Wronskiano: $$W[y_1, y_2] =y_1y_2' - y_1'y_2 $$ dónde $y_1'  =a\cos(x) - b\sen(x), y_2' = c\cos(x) -d\sen(x)$
+	, entonces: $$W = (a\sen(x) + b\cos(x))(c\cos(x)) - (a\cos(x)-b\sen(x))(c\sen(x)+d\cos(x))$$
+	$$W=ac\sen\cos - ad\sen^2 + bc\cos^2 -bd\sen\cos - ac\sen\cos - ad\cos^2 + bc\sen^2 + bd\sen \cos$$
+	$$W = \sen \cos (ac-bd-ac+bd) + \sen^2(bd-ac) + \cos^2(bc-ad)$$
+	$$W = (bc-ad)(\sen^2(x)+ \cos^2(x))$$
+	$$W = bc-ad$$
+	Para que las soluciones sean linealmente independientes, el Wronskiano debe ser distinto de cero, por lo tanto se demuestra que los ceros de estas funciones son distintos y alternados, siempre y cuando $bc-ad \neq 0$.
+	
+	
+
+
+
+
