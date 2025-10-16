@@ -1,0 +1,78 @@
+\chapter{Parte A}
+\section{Introducción}
+\paragraph{}En el capítulo 4 del libro \textit{Ecuaciones diferenciales con aplicaciones y notas históricas}, titulado \textbf{Propiedades cualitativas de las soluciones}, se estudian las características esenciales de las soluciones de la ecuacion diferencial de segundo orden lineal homogénea: 
+$$y''+P(x)y' + Q(x)y = 0$$
+por análisis de la propia ecuación, en ausencia de expresiones formales de dichas soluciones, es decir, de las soluciones explícitas.
+\subsection{Teorema de separación de Strum}
+
+\begin{theorem}
+	Si $y_1 (x)$ e $y_2(x)$ son dos soluciones linealmente independientes de $y''+P(x)y' + Q(x)y = 0$, entonces los \textbf{ceros} de estas funciones son distintos y ocurren alternadamente, es decir, $y_1 (x)$ se anula exactamente una vez entre dos ceros sucesivos de $y_2 (x)$, y así recíprocamente.
+\end{theorem}
+\begin{demo}
+	Cómo $y_1$ e $y_2$ son linealmente independientes, su Wronskiano $$W(y_1,y_2) = y_1(x)y_2'(x) - y_2(x)y_1'(x)$$
+	no se anula. Por tanto, al ser continuo, debe tener un signo constante. Luego, si $x_1$ y $x_2$ son puntos sucesivos donde se anula $y_2$, tenemos por demostrar que existe un $x \in ]x_1 , x_2[$  en el cuál se anula $y_1$.\newline
+	Notemos que en $x_1$ y en $x_2$ el Wronskiano queda de la forma $W = y_1(x)y_2'(x)$, y ambos factores son distintos de cero en esos puntos. Además, $y_2'(x_1)$ e $y_2'(x_2)$ deben tener signos opuestos, ya que si $y_2$ es creciente en $x_1$, debe ser decreciente en $x_2$, o al revés. Como el Wronskiano tiene signo constante, $y_1(x_1)$ e $y_1(x_2)$ también deben tener signos opuestos. Entonces, como el Wronskiano es continuo, podemos usar el \textbf{Teorema del valor medio}, específicamente el de Bolzano, para argumentar que $y_1(x)$ debe anularse en un punto entre $x_1$ y $x_2$. Notar que $y_1$ no puede anularse más de una vez en ese intervalo. En tal caso, se podría ocupar el mismo argumento para plantear que $y_2$ se anula entre esos dos ceros de $y_1$, lo cual contradice la condición inicial de que $x_1$ y $x_2$ son ceros sucesivos de $y_2$.
+	
+\end{demo}
+\begin{theorem}
+	Si $q(x) < 0$ y $u(x)$ es una solución no trivial de $u'' + q(x)u = 0$, entonces $u(x)$ tiene a lo más un cero.
+\end{theorem}
+\begin{demo}
+	Sea $x_0$ un cero de $u(x)$, $u(x_0) = 0$. Cómo $u(x)$ no es una función nula (no trivial), el Teorema 14-A implica que $u'(x_0) \neq 0$. Sin pérdida de generalidad, supongamos que $u'(x_0) > 0$, así que $u(x)$ es positiva sobre algún intervalo a la derecha de $x_0$. Puesto que $q(x) < 0$, $u''(x) = -q(x)u(x)$ es una función positiva sobre ese mismo intervalo. Esto implica que la pendiente $u'(x)$ es una función creciente, luego $u(x)$ no puede tener un cero a la derecha de $x_0$, y por idéntica razón tampoco a su izquierda. Un argumento análogo es válido cuando $u'(x_0) < 0$, y por tanto $u(x)$ o bien carece de ceros o tiene uno tan sólo.
+\end{demo}
+
+\begin{theorem}
+	Sea $u(x)$ cualquier solución no trivial de $u'' + q(x)u = 0$, donde $q(x) > 0$ para todo $x > 0$. Si
+	$$\int_{1}^{\infty} q(x)  dx = \infty,$$
+	entonces $u(x)$ tiene infinitos ceros en el semieje $x$ positivo.
+\end{theorem}
+\begin{demo}
+	Supongamos lo contrario, es decir, que $u(x)$ se anula a lo sumo un número finito de veces para $0 < x < \infty$, de manera que existe un punto $x_0 > 1$ tal que $u(x) \neq 0$ para todo $x \geq x_0$. Podemos suponer, sin pérdida de generalidad, que $u(x) > 0$ para todo $x \geq x_0$. Si ponemos
+	$$v(x) = -\frac{u'(x)}{u(x)}$$
+	para $x \geq x_0$, entonces un sencillo cálculo muestra que
+	$$v'(x) = q(x) + v(x)^2,$$
+	e integrando desde $x_0$ hasta $x$, con $x > x_0$, obtenemos
+	$$v(x) - v(x_0) = \int_{x_0}^x q(x)  dx + \int_{x_0}^x v(x)^2  dx.$$
+	Usamos la hipótesis $\int_{1}^{\infty} q(x)  dx = \infty$ para concluir que $v(x)$ es positiva si $x$ se toma suficientemente grande. Esto demuestra que $u(x)$ y $u'(x)$ tienen signos opuestos si $x$ es suficientemente grande, de modo que $u'(x)$ es negativa y por tanto $u(x)$ debe anularse para algún $x > x_0$, lo cual contradice nuestra suposición inicial.
+\end{demo}
+
+\begin{theorem}
+	Sea $y(x)$ una solución no trivial de la ecuación $y'' + q(x)y = 0$ sobre un intervalo cerrado $[a, b]$. Entonces $y(x)$ tiene a lo sumo un número finito de ceros en ese intervalo.
+\end{theorem}
+\begin{demo}
+	Supongamos lo contrario, o sea, que $y(x)$ tuviese infinitos ceros en $[a, b]$. En tal caso existiría en $[a, b]$ un punto $x_0$ y una sucesión de ceros $x_n \neq x_0$ tales que $x_n \to x_0$. Como $y(x)$ es continua y diferenciable en $x_0$, tenemos
+	$$y(x_0) = \lim_{x_n \to x_0} y(x_n) = 0$$
+	e
+	$$y'(x_0) = \lim_{x_n \to x_0} \frac{y(x_n) - y(x_0)}{x_n - x_0} = 0.$$
+	Por el Teorema 14-A, esto significa que $y(x)$ es necesariamente la solución trivial, y esta contradicción demuestra el teorema.
+\end{demo}
+
+\subsection{Teorema de comparación de Sturm}
+
+\begin{theorem}
+	Sean $y(x)$, $z(x)$ soluciones no triviales de
+	$$y'' + q(x)y = 0$$
+	y
+	$$z'' + r(x)z = 0,$$
+	donde $q(x)$ y $r(x)$ son funciones positivas tales que $q(x) > r(x)$. Entonces $y(x)$ se anula al menos una vez entre cada dos ceros sucesivos de $z(x)$.
+\end{theorem}
+\begin{demo}
+	Sean $x_1$ y $x_2$ dos ceros sucesivos de $z(x)$, de modo que $z(x_1) = z(x_2) = 0$ y $z(x)$ no se anula en el intervalo abierto $(x_1, x_2)$. Supongamos que $y(x)$ no se anula en $(x_1, x_2)$. Sin pérdida de generalidad, podemos admitir que tanto $y(x)$ como $z(x)$ son positivas sobre $(x_1, x_2)$. Consideremos el wronskiano
+	$$W(y, z) = y(x)z'(x) - z(x)y'(x).$$
+	Derivando obtenemos:
+	$$\frac{dW(x)}{dx} = yz'' - zy'' = y(-rz) - z(-qy) = (q - r)yz > 0$$
+	sobre $(x_1, x_2)$. Integrando ambos lados entre $x_1$ y $x_2$:
+	$$W(x_2) - W(x_1) > 0 \quad \text{o sea} \quad W(x_2) > W(x_1).$$
+	Pero el wronskiano se reduce a $y(x)z'(x)$ en $x_1$ y en $x_2$, luego
+	$$W(x_1) \geq 0 \quad \text{y} \quad W(x_2) \leq 0,$$
+	lo cual es una contradicción.
+\end{demo}
+
+\begin{theorem}
+	Sea $y_p(x)$ una solución no trivial de la ecuación de Bessel sobre el semieje $x$ positivo. Si $0 \leq p < 1/2$, entonces todo intervalo de longitud $\pi$ contiene al menos un cero de $y_p(x)$; si $p = 1/2$, la distancia entre ceros sucesivos de $y_p(x)$ es exactamente $\pi$, y si $p > 1/2$, entonces todo intervalo de longitud $\pi$ contiene a lo sumo un cero de $y_p(x)$.
+\end{theorem}
+\begin{demo}
+	La ecuación de Bessel en forma normal es
+	$$u'' + \left( 1 + \frac{1 - 4p^2}{4x^2} \right) u = 0.$$
+	Comparando con $u'' + u = 0$ y aplicando el teorema de comparación de Sturm, se obtienen los resultados según el valor de $p$.
+\end{demo}

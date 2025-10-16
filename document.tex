@@ -1,0 +1,73 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[Glenn]{fncychap}
+
+\usepackage{amsmath, amssymb, geometry, graphicx, fancyhdr, hyperref, titlesec, titling, tocloft, tcolorbox, booktabs}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+
+
+\geometry{margin=2.5cm}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=1.5cm]{./TeX_files/logo.png}}
+\fancyhead[C]{}
+\fancyhead[R]{\nouppercase{\leftmark}}
+
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{\nouppercase{\leftmark}} % Agrega el número y nombre del capítulo al pie de página
+
+% Hipervínculos
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=blue,
+	pdftitle={Tarea EDO},
+	pdfauthor={Simón Valdés Oliva},
+}
+\newtheorem{theorem}{Teorema}
+\newtheorem{demo}{Demostración}
+\begin{document}
+	\title{TAREA EDO}
+	\author{Simón Valdés, Mauricio Vivanco\\MAT208 - Ecuaciones Diferenciales\\Prof. Víctor Bravo, PhD.\\Universidad Adolfo Ibáñez\\Viña del Mar}
+	\date{25 oct. 2025}
+
+	\maketitle
+	\newpage
+	\tableofcontents
+	
+
+	\newpage
+	
+
+\include{./TeX_files/parte_a}
+\include{./TeX_files/parte_b}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\newpage
+
+\begin{thebibliography}{9}
+	\bibitem{simmons}
+	Simmons, G. F. (1991).
+	\emph{Ecuaciones diferenciales con aplicaciones y notas históricas} (2ª ed.).
+	McGraw-Hill.
+\end{thebibliography}
+
+		
+
+\end{document}
